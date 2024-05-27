@@ -2,12 +2,14 @@
 /*
 Plugin Name: Site Config JSON API
 Description: A plugin to expose site configuration via JSON
-Version: 0.1.1
+Version: 0.2.3
 Author: Brian Wood (Stratifi Creative)
 */
 
-// Include the update checker
+
+// Include necessary files
 require_once plugin_dir_path(__FILE__) . 'includes/update-checker.php';
+require_once plugin_dir_path(__FILE__) . 'includes/api-key-management.php';
 
 new GitHub_Updater(__FILE__, 'MintCondition', 'site-config-json-api');
 
@@ -16,16 +18,25 @@ add_action('rest_api_init', function () {
     register_rest_route('site-config/v1', '/data', array(
         'methods' => 'GET',
         'callback' => 'get_site_configuration',
-        'permission_callback' => '__return_true'
+        'permission_callback' => 'validate_api_key'
     ));
     register_rest_route('site-config/v1', '/test', array(
         'methods' => 'GET',
         'callback' => 'test_endpoint',
-        'permission_callback' => '__return_true'
+        'permission_callback' => 'validate_api_key'
     ));
 });
 
-// Function to get the site configuration
+function validate_api_key($request) {
+    $api_key = $request->get_header('X-API-Key');
+    if (!$api_key) {
+        $api_key = $request->get_param('api_key');
+    }
+    
+    $valid_api_keys = get_option('api_keys', array());
+    return in_array($api_key, $valid_api_keys);
+}
+
 function get_site_configuration() {
     $post_types = get_post_types(array('public' => true, '_builtin' => false), 'objects');
     $acf_fields = array();
