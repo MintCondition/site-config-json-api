@@ -3,7 +3,7 @@ Contributors: Your Name
 Tags: example, plugin
 Requires at least: 5.0
 Tested up to: 6.0
-Stable tag: 0.1.0
+Stable tag: 0.1.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,6 +14,9 @@ Allows connection to an API endpoint delivering SiteConfiguration via JSON
 Figure it out...
 
 == Changelog ==
+= 0.1.1 =
+Removed some testing code.
+
 = 0.1.0 =
 * Added core functionality to expose endpoint.
 

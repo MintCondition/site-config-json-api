@@ -2,12 +2,11 @@
 /*
 Plugin Name: Site Config JSON API
 Description: A plugin to expose site configuration via JSON
-Version: 0.1.0
+Version: 0.1.1
 Author: Brian Wood (Stratifi Creative)
 */
 
-// Your plugin code starts here
-
+// Include the update checker
 require_once plugin_dir_path(__FILE__) . 'includes/update-checker.php';
 
 new GitHub_Updater(__FILE__, 'MintCondition', 'site-config-json-api');
@@ -26,6 +25,7 @@ add_action('rest_api_init', function () {
     ));
 });
 
+// Function to get the site configuration
 function get_site_configuration() {
     $post_types = get_post_types(array('public' => true, '_builtin' => false), 'objects');
     $acf_fields = array();
@@ -68,12 +68,3 @@ function get_site_configuration() {
 function test_endpoint() {
     return new WP_REST_Response('Test endpoint working', 200);
 }
-
-function debug_user_capabilities() {
-    if (defined('WP_DEBUG') && WP_DEBUG) {
-        $user = wp_get_current_user();
-        error_log('User roles during init: ' . implode(', ', $user->roles));
-        error_log('User capabilities during init: ' . print_r($user->allcaps, true));
-    }
-}
-add_action('init', 'debug_user_capabilities');
