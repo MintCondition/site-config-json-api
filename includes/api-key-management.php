@@ -24,7 +24,11 @@ function api_key_management_page() {
                 <p><?php _e('Cannot generate new API key. Maximum limit of 5 keys reached.', 'text-domain'); ?></p>
             </div>
         <?php endif; ?>
-        <p>Mange API keys to access the site configuration data via the JSON API.</p>
+        
+    <p>The Site Config JSON API plugin allows you to expose site configuration data via a JSON API. It was designed to prompt an AI (like ChatGPT) to help you and the Main Endpoint (accessible via the buttons below) includes a prompt explaining to the AI what is available. There are several endpoints available with different information. To use the API, you must provide an API key. Use the API key(s) below in a browser tab and paste the response data into your AI Chat.</p>
+
+        
+        <h2>Generate New API Key</h2>
         <form method="post" action="<?php echo esc_url(admin_url('admin-post.php')); ?>">
             <?php
             settings_fields('api_key_options');
