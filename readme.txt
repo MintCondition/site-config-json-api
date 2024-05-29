@@ -9,7 +9,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 Allows connection to an API endpoint delivering SiteConfiguration via JSON. 
-IMPORTANT NOTE: This exposes a good bit of your site configuration to anyone with an endpoint. The only 
+**IMPORTANT NOTE: This exposes a good bit of your site configuration to anyone with an endpoint. The only 
 authentication is through the built in API key system. It is NOT meant for production sites or ones that 
 you care about securing. 
 
