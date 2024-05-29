@@ -3,7 +3,7 @@ Contributors: Your Name
 Tags: example, plugin
 Requires at least: 5.0
 Tested up to: 6.0
-Stable tag: 0.2.3
+Stable tag: 0.5.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,6 +27,28 @@ There are other reasons you might use this as well.
 If you can't figure out how to install a WP Plugin, you should NOT use this one.
 
 == Changelog ==
+== 0.5.0 =
+Major changes. 
+Added
+Main Endpoint: Includes dynamic instructions with the API key.
+Post Type List Endpoint: Provides an overview of all post types available in the WordPress installation.
+Post Type Detail Endpoint: Delivers detailed information about a specific post type.
+ACF or Meta Fields Endpoint: Lists all custom meta fields registered with the system, including origin and 
+    association.
+Users Endpoint: Provides a count of users by role.
+Plugins Endpoint: Lists currently installed plugins with their version numbers and active status.
+Theme List Endpoint: Lists all installed themes, indicating if they are active and if they are 
+    child themes (with parent theme information).
+
+Improved
+Main endpoint now includes a prompt to the AI explaining what they are being given and how to access
+    other endpoints. Also dynamically includes the provided API key so it can generate endpoint URLs.
+
+Notes
+API key is now dynamically included in the instructions message.
+Each endpoint requires the API key to be passed as a URL parameter for authentication.
+
+
 == 0.2.3 =
 Style changes
 Cleanup a few items

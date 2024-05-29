@@ -2,7 +2,7 @@
 /*
 Plugin Name: Site Config JSON API
 Description: A plugin to expose site configuration via JSON
-Version: 0.2.3
+Version: 0.5.0
 Author: Brian Wood (Stratifi Creative)
 */
 
