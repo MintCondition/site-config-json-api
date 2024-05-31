@@ -3,7 +3,7 @@ Contributors: Your Name
 Tags: example, plugin
 Requires at least: 5.0
 Tested up to: 6.0
-Stable tag: 0.5.0
+Stable tag: 0.5.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,6 +27,9 @@ There are other reasons you might use this as well.
 If you can't figure out how to install a WP Plugin, you should NOT use this one.
 
 == Changelog ==
+== 0.5.1 =
+Fix for namespace debug log errors.
+
 == 0.5.0 =
 Major changes. 
 Added
