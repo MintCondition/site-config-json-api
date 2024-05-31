@@ -10,9 +10,16 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
 
-define('SITE_CONFIG_API_NAMESPACE', 'site-config/v1');
-define('SITE_CONFIG_API_ROUTE', '/data');
-define('SITE_CONFIG_API_TEST_ROUTE', '/test');
+
+if (!defined('SITE_CONFIG_API_NAMESPACE')) {
+    define('SITE_CONFIG_API_NAMESPACE', 'site-config/v1');
+}
+if (!defined('SITE_CONFIG_API_ROUTE')) {
+    define('SITE_CONFIG_API_ROUTE', '/data');
+}
+if (!defined('SITE_CONFIG_API_TEST_ROUTE')) {
+    define('SITE_CONFIG_API_TEST_ROUTE', '/test');
+}
 
 require_once plugin_dir_path(__FILE__) . 'includes/update-checker.php';
 require_once plugin_dir_path(__FILE__) . 'includes/api-key-management.php';
